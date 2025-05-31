@@ -1,3 +1,4 @@
 pandas
 numpy
 scikit-learn
+-e . # look for setup.py - setup.py looks for __init__.py constructor file and setup that particular folder as local package
