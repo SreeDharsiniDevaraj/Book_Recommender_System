@@ -4,7 +4,7 @@ from books_recommender.exception.exception_handler import AppException
 
 
 
-def read_yaml_file(file_path:str)->dict: # config.yaml is read frequently, so writing a separate function to make it easy
+def read_yaml_file(file_path:str)->dict: # writing a separate function for commonly used action throughout the project
     """
     Reads a YAML file and returns the contents as a dictionary.
     file_path: str
