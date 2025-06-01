@@ -3,7 +3,7 @@ import sys
 from books_recommender.logger.log import logging
 from books_recommender.utils.util import read_yaml_file
 from books_recommender.exception.exception_handler import AppException
-from books_recommender.entity.config_entity import DataIngestionConfig # DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelRecommendationConfig
+from books_recommender.entity.config_entity import DataIngestionConfig, DataValidationConfig #DataTransformationConfig, ModelTrainerConfig, ModelRecommendationConfig
 from books_recommender.constant import *
 
 
@@ -38,7 +38,7 @@ class AppConfiguration:
 
 
     
-    '''def get_data_validation_config(self) -> DataValidationConfig:
+    def get_data_validation_config(self) -> DataValidationConfig:
         try:
             data_validation_config = self.configs_info['data_validation_config']
             data_ingestion_config = self.configs_info['data_ingestion_config']
@@ -67,7 +67,7 @@ class AppConfiguration:
 
 
     
-    def get_data_transformation_config(self) -> DataTransformationConfig:
+    '''def get_data_transformation_config(self) -> DataTransformationConfig:
         try:
             data_transformation_config = self.configs_info['data_transformation_config']
             data_validation_config = self.configs_info['data_validation_config']
