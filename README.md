@@ -33,3 +33,8 @@ env/Scripts/activate.bat
 ### STEP 02- install the requirements
 ```bash
 pip install -r requirements.txt
+
+
+Now run,
+```bash
+streamlit run app.py

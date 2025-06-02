@@ -3,8 +3,7 @@ import sys
 from books_recommender.logger.log import logging
 from books_recommender.utils.util import read_yaml_file
 from books_recommender.exception.exception_handler import AppException
-from books_recommender.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig
-#ModelRecommendationConfig
+from books_recommender.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelRecommendationConfig
 from books_recommender.constant import *
 
 
@@ -119,7 +118,7 @@ class AppConfiguration:
 
     
 
-    '''def get_recommendation_config(self) -> ModelRecommendationConfig:
+    def get_recommendation_config(self) -> ModelRecommendationConfig:
         try:
             recommendation_config = self.configs_info['recommendation_config']
             model_trainer_config = self.configs_info['model_trainer_config']
@@ -147,4 +146,4 @@ class AppConfiguration:
             return response
 
         except Exception as e:
-            raise AppException(e, sys) from e'''
+            raise AppException(e, sys) from e
