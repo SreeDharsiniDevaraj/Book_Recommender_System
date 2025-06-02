@@ -1,7 +1,6 @@
 import os
 import sys
 import pickle
-import zipfile
 import pandas as pd
 from books_recommender.logger.log import logging
 from books_recommender.config.configuration import AppConfiguration
@@ -22,7 +21,7 @@ class DataTransformation:
         try:
             df = pd.read_csv(self.data_transformation_config.clean_data_file_path)
             # Lets create a pivot table
-            book_pivot = df.pivot_table(columns='User_id', index='Title', values= 'Rating')
+            book_pivot = df.pivot_table(columns='User_id', index='Title', values='Rating')
             logging.info(f" Shape of book pivot table: {book_pivot.shape}")
             book_pivot.fillna(0, inplace=True)
 
@@ -39,27 +38,10 @@ class DataTransformation:
             pickle.dump(book_names,open(os.path.join(self.data_validation_config.serialized_objects_dir, "book_names.pkl"),'wb'))
             logging.info(f"Saved book_names serialization object to {self.data_validation_config.serialized_objects_dir}")
 
-            # Saving book_pivot objects for web_app
-            # Compress the pickle file into a zip archive
-            # Define paths
-            serialized_dir = self.data_validation_config.serialized_objects_dir
-            os.makedirs(serialized_dir, exist_ok=True)
-
-            # Save pickle file
-            pkl_path = os.path.join(serialized_dir, "book_pivot.pkl")
-            pickle.dump(book_pivot, open(pkl_path, 'wb'))
-            logging.info(f"Saved book_pivot serialization object to {pkl_path}")
-
-            # Compress the pickle file into a zip archive
-            zip_path = os.path.join(serialized_dir, "book_pivot.zip")
-            with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
-                zipf.write(pkl_path, arcname="book_pivot.pkl")
-
-            logging.info(f"Compressed and saved book_pivot.pkl as {zip_path}")
-
-            # Optionally, remove the original pickle file after compression
-            os.remove(pkl_path)
-            logging.info(f"Removed original pickle file: {pkl_path}")
+            #saving book_pivot objects for web app
+            os.makedirs(self.data_validation_config.serialized_objects_dir, exist_ok=True)
+            pickle.dump(book_pivot,open(os.path.join(self.data_validation_config.serialized_objects_dir, "book_pivot.pkl"),'wb'))
+            logging.info(f"Saved book_pivot serialization object to {self.data_validation_config.serialized_objects_dir}")
 
         except Exception as e:
             raise AppException(e, sys) from e
