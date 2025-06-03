@@ -29,7 +29,6 @@ python -m venv env
 env/Scripts/activate.bat
 ```
 
-
 ### STEP 02- install the requirements
 ```bash
 pip install -r requirements.txt
@@ -39,8 +38,7 @@ Now run,
 ```bash
 streamlit run app.py
 
-
-# Streamlit app Docker Image Deployment
+# STREAMLIT APP DOCKER IMAGE DEPLOYMENT
 
 ## 1. Login with your AWS console and launch an EC2 instance
 ## 2. Run the following commands
