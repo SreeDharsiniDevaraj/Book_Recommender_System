@@ -68,7 +68,7 @@ git clone "your-project"
 ```
 
 ```bash
-docker build -t entbappy/stapp:latest . 
+docker build -t SreeDharsiniDevaraj/stapp:latest . 
 ```
 
 ```bash
@@ -76,7 +76,7 @@ docker images -a
 ```
 
 ```bash
-docker run -d -p 8501:8501 entbappy/stapp 
+docker run -d -p 8501:8501 SreeDharsiniDevaraj/stapp 
 ```
 
 ```bash
@@ -96,13 +96,13 @@ docker login
 ```
 
 ```bash
-docker push entbappy/stapp:latest 
+docker push SreeDharsiniDevaraj/stapp:latest 
 ```
 
 ```bash
-docker rmi entbappy/stapp:latest
+docker rmi SreeDharsiniDevaraj/stapp:latest
 ```
 
 ```bash
-docker pull entbappy/stapp
+docker pull SreeDharsiniDevaraj/stapp
 ```
