@@ -1,4 +1,5 @@
-# Book_Recommender_System
+# End_to_End_Book_Recommendation_System
+## Book_Recommender_System
 
 ## Workflow
 
@@ -19,26 +20,30 @@ Clone the repository
 ```bash
 https://github.com/SreeDharsiniDevaraj/Book_Recommender_System.git
 ```
-### STEP 01- Create a python environment after opening the repository
+### STEP 01- Create a python virtual environment after opening the repository
 
 ```bash
 python -m venv env
 ```
 
 ```bash
-env/Scripts/activate.bat
+E:\End_to_End_Book_Recommendation_System\env\Scripts\activate.bat
 ```
+
 
 ### STEP 02- install the requirements
 ```bash
 pip install -r requirements.txt
+```
 
 
 Now run,
 ```bash
 streamlit run app.py
+```
 
-# STREAMLIT APP DOCKER IMAGE DEPLOYMENT
+
+# Streamlit app Docker Image Deployment
 
 ## 1. Login with your AWS console and launch an EC2 instance
 ## 2. Run the following commands
@@ -62,11 +67,11 @@ newgrp docker
 ```
 
 ```bash
-git clone "your-project"
+git clone https://github.com/SreeDharsiniDevaraj/Book_Recommender_System.git
 ```
 
 ```bash
-docker build -t SreeDharsiniDevaraj/stapp:latest . 
+docker build -t sreedharsini1999/stapp:latest . 
 ```
 
 ```bash
@@ -74,7 +79,7 @@ docker images -a
 ```
 
 ```bash
-docker run -d -p 8501:8501 SreeDharsiniDevaraj/stapp 
+docker run -d -p 8501:8501 sreedharsini1999/stapp 
 ```
 
 ```bash
@@ -94,13 +99,19 @@ docker login
 ```
 
 ```bash
-docker push SreeDharsiniDevaraj/stapp:latest 
+docker push sreedharsini1999/stapp:latest 
 ```
 
 ```bash
-docker rmi SreeDharsiniDevaraj/stapp:latest
+docker rmi sreedharsini1999/stapp:latest
 ```
 
 ```bash
-docker pull SreeDharsiniDevaraj/stapp
+docker pull sreedharsini1999/stapp
 ```
+
+
+
+
+
+
